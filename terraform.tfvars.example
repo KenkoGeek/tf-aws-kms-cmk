@@ -1,0 +1,17 @@
+aws_region              = "us-east-1"
+deletion_window_in_days = 30
+enable_key_rotation     = true
+multiregion             = false
+number_of_keys          = 1
+project_name            = "my-project"
+services = [
+  "S3",
+  "RDS",
+  "MSK",
+  "CloudWatch",
+  "EBS"
+]
+tags = {
+  "Environment": "Development",
+  "Owner": "Frankin Garcia"
+}
