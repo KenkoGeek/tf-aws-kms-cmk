@@ -1,12 +1,14 @@
 aws_region              = "us-east-1"
-deletion_window_in_days = 7
+deletion_window_in_days = 30
 enable_key_rotation     = true
 multiregion             = false
-number_of_keys          = 2
 project_name            = "my-project"
 services = [
   "S3",
-  "RDS"
+  "RDS",
+  "MSK",
+  "CloudWatch",
+  "EBS"
 ]
 tags = {
   "Environment": "Development",

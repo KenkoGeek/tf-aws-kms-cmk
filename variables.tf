@@ -8,16 +8,6 @@ variable "aws_region" {
   }
 }
 
-variable "number_of_keys" {
-  description = "Number of KMS keys to create"
-  type        = number
-  default     = 1
-  validation {
-    condition     = var.number_of_keys > 0 && var.number_of_keys <= 10
-    error_message = "The number of keys must be greater than 0 and less than or equal to 10."
-  }
-}
-
 variable "project_name" {
   type        = string
   description = "Name of the project"

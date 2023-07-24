@@ -39,14 +39,14 @@ terraform fmt
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.3.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.3.0 |
 
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | = 1.5.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 5.3.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.3.0 |
 
 ## Modules
 
@@ -56,9 +56,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_kms_alias.kms_alias](https://registry.terraform.io/providers/hashicorp/aws/5.3.0/docs/resources/kms_alias) | resource |
-| [aws_kms_key.kms_key](https://registry.terraform.io/providers/hashicorp/aws/5.3.0/docs/resources/kms_key) | resource |
-| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/5.3.0/docs/data-sources/caller_identity) | data source |
+| [aws_kms_alias.kms_alias](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_alias) | resource |
+| [aws_kms_key.kms_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 
 ## Inputs
 
@@ -68,7 +68,6 @@ No modules.
 | <a name="input_deletion_window_in_days"></a> [deletion\_window\_in\_days](#input\_deletion\_window\_in\_days) | Deletion window in days | `number` | `30` | no |
 | <a name="input_enable_key_rotation"></a> [enable\_key\_rotation](#input\_enable\_key\_rotation) | Enable key rotation | `bool` | `true` | no |
 | <a name="input_multiregion"></a> [multiregion](#input\_multiregion) | Enable multi-region key | `bool` | `false` | no |
-| <a name="input_number_of_keys"></a> [number\_of\_keys](#input\_number\_of\_keys) | Number of KMS keys to create | `number` | `1` | no |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Name of the project | `string` | `"my-project"` | no |
 | <a name="input_services"></a> [services](#input\_services) | Services to encrypt using the keys | `list(string)` | <pre>[<br>  "S3",<br>  "RDS",<br>  "MSK",<br>  "CloudWatch",<br>  "EBS"<br>]</pre> | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to AWS resources | `map(string)` | <pre>{<br>  "Environment": "Development",<br>  "Owner": "Frankin Garcia"<br>}</pre> | no |

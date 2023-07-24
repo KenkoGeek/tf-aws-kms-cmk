@@ -2,7 +2,7 @@
 data "aws_caller_identity" "current" {}
 
 resource "aws_kms_key" "kms_key" {
-  count                   = var.number_of_keys
+  count                   = length(var.services)
   description             = "KMS key for ${var.services[count.index]}"
   key_usage               = "ENCRYPT_DECRYPT"
   deletion_window_in_days = var.deletion_window_in_days
