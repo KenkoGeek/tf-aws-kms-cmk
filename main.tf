@@ -54,7 +54,7 @@ resource "aws_kms_key" "kms_key" {
 
 # Alias for each KMS key
 resource "aws_kms_alias" "kms_alias" {
-  count         = var.number_of_keys
+  count         = length(var.services)
   name          = "alias/${var.project_name}/${lower(var.services[count.index])}"
   target_key_id = aws_kms_key.kms_key[count.index].key_id
 }
