@@ -53,7 +53,7 @@ variable "multiregion" {
 variable "tags" {
   type        = map(string)
   description = "Tags to apply to AWS resources"
-  default     = {
+  default = {
     Environment = "Development"
     Owner       = "Frankin Garcia"
   }

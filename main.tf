@@ -8,7 +8,7 @@ resource "aws_kms_key" "kms_key" {
   deletion_window_in_days = var.deletion_window_in_days
   enable_key_rotation     = var.enable_key_rotation
   multi_region            = var.multiregion
-  tags = var.tags
+  tags                    = var.tags
 
   # Create access policy for each KMS key
   policy = jsonencode({
@@ -19,7 +19,7 @@ resource "aws_kms_key" "kms_key" {
         "Sid" : "Enable IAM User Permissions",
         "Effect" : "Allow",
         "Principal" : {
-          "AWS" : "${data.aws_caller_identity.current.arn}"
+          "AWS" : data.aws_caller_identity.current.arn
         },
         "Action" : "kms:*",
         "Resource" : "*"
@@ -28,16 +28,16 @@ resource "aws_kms_key" "kms_key" {
         "Sid" : "Allow via service",
         "Effect" : "Allow",
         "Principal" : {
-          "AWS": "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"
+          "AWS" : "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"
         },
-        "Action" : [        
-            "kms:Encrypt",
-            "kms:Decrypt",
-            "kms:ReEncrypt*",
-            "kms:GenerateDataKey*",
-            "kms:CreateGrant",
-            "kms:ListGrants",
-            "kms:DescribeKey"
+        "Action" : [
+          "kms:Encrypt",
+          "kms:Decrypt",
+          "kms:ReEncrypt*",
+          "kms:GenerateDataKey*",
+          "kms:CreateGrant",
+          "kms:ListGrants",
+          "kms:DescribeKey"
         ],
         "Resource" : "*",
         "Condition" : {
